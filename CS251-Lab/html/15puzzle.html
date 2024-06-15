@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>15-Puzzle game</title>
+    <script type="text/javascript">
+	var current = 15
+  function visuals(){
+      //setting up the visuals
+      var tiles=document.getElementsByClassName("box");
+      //window.alert(tiles[0].id);
+      for (i=0;i<tiles.length;i++){
+        if(i==current){
+          tiles[i].innerHTML="";
+          tiles[i].style.backgroundColor="white";
+        } else{
+          tiles[i].innerHTML=tiles[i].id;
+          tiles[i].style.backgroundColor="gray";
+          tiles[i].style.color="white";
+          tiles[i].style.width="25px";
+          tiles[i].style.height="25px";
+          tiles[i].style.textAlign="center";
+        }
+      }
+    }
+
+    visuals();
+    //visuals done
+
+	function up() {
+    tiles=document.getElementsByClassName("tile");
+    //alert(tiles[1]);
+    if(current<4){
+      return;
+    }
+    else{
+      tiles[current].id=tiles[current-4].id;
+      current=current-4;
+      visuals();
+    }
+  }
+
+ </script>
+  </head>
+  <body>
+    <center>
+    <table border="1"  style="width:300px; height=300px">
+      <tr><td class="box" id="1" style="width:10%" bgcolor="red"><br><br><br></td><td  class="box" id="2" style="width:10%" bgcolor="red"></td><td  class="box" id="3" style="width:10%" bgcolor="red"></td><td class="box" id="4" style="width:10%" bgcolor="red"></td></tr>
+      <tr><td  class="box" id="5" style="width:10%" bgcolor="red"><br><br><br></td><td  class="box" id="6" style="width:10%" bgcolor="red"></td><td  class="box" id="7" style="width:10%" bgcolor="red"></td><td  class="box" id="8" style="width:10%" bgcolor="red"></td></tr>
+      <tr><td  class="box" id="9" style="width:10%" bgcolor="red"><br><br><br></td><td  class="box" id="10" style="width:10%" bgcolor="red"></td><td  class="box" id="11" style="width:10%" bgcolor="red"></td><td  class="box" id="12" style="width:10%" bgcolor="red"></td></tr>
+      <tr><td  class="box" id="13" style="width:10%" bgcolor="red"> <br><br><br></td><td  class="box" id="14" style="width:10%" bgcolor="red"></td><td  class="box" id="15" style="width:10%" bgcolor="red"></td><td class="box" id="16" style="width:10%" bgcolor="black"></td></tr>
+    </table>
+    <br>
+<table>
+  <tr>
+    <td></td>
+    <td align="center"><input type="button" onclick="up()" value = "UP" /></td>
+    <td></td>
+    </tr>
+  <tr>
+    <td><input type="button" onclick="left()" value = "LEFT" /></td>
+    <td></td>
+    <td><input type="button" onclick="right()" value = "RIGHT" /></td>
+    <br>
+    </tr>
+  <tr>
+    <td></td>
+    <td align="center"><input type="button" onclick="down()" value = "DOWN" /></td>
+    <td></td>
+    </tr>
+</table>
+    </center>
+  </body>
+</html>

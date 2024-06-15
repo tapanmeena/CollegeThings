@@ -1,0 +1,30 @@
+<html>
+  <script type="text/javascript">
+    function checkGCD(){
+    var fnum=document.getElementById("first").value;
+    var snum=document.getElementById("second").value;
+    var a=Number(fnum);
+    var b=Number(snum);
+    var gcd;
+    while (a!=b){
+      if (a>b){
+           a = a -b;
+          }
+      else{
+       b = b - a;
+          }
+    }
+    alert("GCD of "+fnum+" and "+snum+" is "+a);
+    }
+  </script>
+  
+  <body>
+    <center>
+      <form>
+	Enter First Number:<input type="text"  id="first" name="firstNum" /><br/>
+	Enter Second Number:<input type="text" id="second" name="secondnum" /><br/>
+	<input type="submit" value="Compute" onclick="checkGCD()"/>
+	</form>
+
+  </body>
+</html>
